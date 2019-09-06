@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introduction into R for absolute beginners</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Johan Aparicio" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding/datatables.js"></script>
+    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: center, middle
+
+#Introduction into R for absolute beginners
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/RStudio.png" alt="RStudio"   width="100" height="120"&gt;
+###Johan Aparicio 
+## International Center for Tropical Agriculture
+## 2019/05/09
+
+
+---
+
+class: center, middle
+
+# Recordando...
+
+---
+
+# Basic operations
+
+
+```r
+a &lt;- 3+3 
+b &lt;- 3*4
+c &lt;- 4^2 
+```
+--
+
+
+```r
+a + b + c
+```
+
+```
+[1] 34
+```
+
+
+
+--
+
+
+```r
+z &lt;- log(200)
+w &lt;- exp(4) 
+x &lt;- sqrt(9)
+```
+
+--
+
+
+```r
+z  - w  +  x
+```
+
+```
+[1] -46.29983
+```
+
+
+---
+
+# Hello World
+
+En R existen varios tipos de objectos que permiten que el usuario pueda almacenar la información para realizar procedimientos estadísticos y gráficos. 
+
+
+Los principales objetos en R son:
+
+- [Vectores](vectores)
+- [Matrices](matrices) 
+- [Marcos de datos](marcos de datos) 
+- [Listas](listas)
+
+---
+
+background-image: url(images/r-vector.jpg)
+background-size: 600px
+
+# Vectors
+
+---
+
+# Vectors 
+
+Vectors are ordered arrangements in which information of numerical type **([quantitative variable](quantitative variable))**, alphanumeric **([qualitative variable](qualitative variable))** or logical **([TRUE or FALSE](TRUE or FALSE))** can be stored, but not mixtures of these.
+
+&lt;br&gt;
+
+--
+
+
+&lt;center&gt;
+&lt;img src="images/example_vect.PNG" width="40%"&gt;
+&lt;/center&gt;
+
+
+---
+
+
+
+###Numeric ([Quantitative](Quantitative))
+
+
+```r
+a &lt;- 41201 ; b &lt;-  12.3 
+```
+
+--
+
+-----------------
+
+###Character ([Qualitative](Quanlitative))
+
+
+
+```r
+e &lt;- "Dog"  ;  f &lt;- "CIAT"  ;  g &lt;-  "RStudio"
+```
+
+
+--
+
+-----------------
+
+### Boolean  ([Logical](Logical))
+
+
+
+```r
+TRUE
+
+FALSE
+```
+
+
+```r
+r &lt;- 4 &gt; 6  ;  w &lt;- 400 == 30
+```
+
+
+---
+
+# Class
+
+
+
+```r
+a &lt;- 41201
+
+class(a)
+```
+
+```
+[1] "numeric"
+```
+
+--
+
+-----------------
+
+
+```r
+g &lt;-  "RStudio"
+
+class(g)
+```
+
+```
+[1] "character"
+```
+
+--
+
+-----------------
+
+
+```r
+r &lt;- 4 &gt; 6
+
+class(r)
+```
+
+```
+[1] "logical"
+```
+
+
+---
+  
+1.	Data nature and structure (Jaison, Mr Bean) (types of vectors, default datasets(iris, mtcars, etc)) 
+
+2.	Summary/continue of basic operations
+
+3.	Types of variables (numeric, character, factor, logical, integer, string, NA, NaN, NULL)
+
+4.	Types of objects (atomic vectors, matrix, data.frames, lists, …arrays….)
+
+5.	Vecor creation c(), rep(), seq()
+
+6.	Vector indexing and element extraction
+
+7.	Data.frame() explain and operations ($ and [rows,cols])
+
+8.	Adding a row and a column
+
+9.	Introduction to dplyr 
+
+---
+
+
+background-image: url(cheat.PNG)
+background-size: 700px
+
+
+---
+
+# Example
+
+
+&lt;center&gt;
+&lt;img src="images/seq2.gif" width="100%"&gt;
+&lt;/center&gt;
+
+
+---
+
+# Vectors using colon operator 
+
+
+```r
+# Creating a sequence from 5 to 13.
+v &lt;- 5:13
+*print(v)
+```
+
+```
+[1]  5  6  7  8  9 10 11 12 13
+```
+
+--
+  
+
+```r
+# Creating a sequence from 6.6 to 12.6.
+v &lt;- 6.6:12.6
+print(v)
+```
+
+```
+[1]  6.6  7.6  8.6  9.6 10.6 11.6 12.6
+```
+
+--
+
+```r
+# What happens in this case?
+*v &lt;- 3.8:11.4
+print(v) 
+```
+
+--
+
+
+```
+[1]  3.8  4.8  5.8  6.8  7.8  8.8  9.8 10.8
+```
+
+
+
+
+---
+
+class: middle
+
+##Using sequence (seq.) operator
+
+
+
+```r
+# Create vector with elements from 5 to 9 incrementing by 0.4.
+test &lt;- seq(from = 5, to = 9, by = 0.4)
+```
+
+--
+
+
+```r
+print(test)
+```
+
+```
+ [1] 5.0 5.4 5.8 6.2 6.6 7.0 7.4 7.8 8.2 8.6 9.0
+```
+
+
+--
+
+
+```r
+# What happens in this case?
+seq( from = 2 , to = 7 , by = 0.7)
+```
+
+--
+
+
+```
+[1] 2.0 2.7 3.4 4.1 4.8 5.5 6.2 6.9
+```
+
+
+.footnote[  **[_NOTE:_](_NOTE:_)**  from = ...   ,  to =  ... ,  by  = ... ] 
+
+---
+
+
+#Using the c( ) function
+
+
+```r
+x &lt;- c(1, 5, 4, 9, 0)
+y &lt;- c("Carlos", "Bean" , "Carolina Torres")
+z &lt;- c(TRUE, FALSE , FALSE)
+```
+
+-----------------
+
+--
+
+
+```r
+class(x)
+```
+
+```
+[1] "numeric"
+```
+
+```r
+class(y)
+```
+
+```
+[1] "character"
+```
+
+```r
+class(z)
+```
+
+```
+[1] "logical"
+```
+
+
+
+---
+
+
+##Giving different types of data item in a Vector
+
+
+
+```r
+y &lt;- c(2,3,"ten")
+```
+
+--
+
+Since vector is a collection of similar data type. Therefore, if we try to create vectors like the above example then Coercion takes place.
+
+--
+
+
+```r
+y
+```
+
+```
+[1] "2"   "3"   "ten"
+```
+
+--
+
+## Generic order in increasing fashion is as follows :
+
+&lt;center&gt;
+
+Boolean &lt; Numeric &lt; Character
+
+&lt;/center&gt;
+
+
+---
+
+
+
+
+```r
+# Example 1
+x &lt;- c(3,4,5,"ten",TRUE)
+```
+
+--
+
+
+```r
+x
+```
+
+```
+[1] "3"    "4"    "5"    "ten"  "TRUE"
+```
+
+-------------------
+
+--
+
+
+```r
+# Example 2
+p &lt;- c(3,4,5,TRUE)
+```
+
+--
+
+
+```r
+p
+```
+
+```
+[1] 3 4 5 1
+```
+
+-------------------
+
+--
+
+
+```r
+# Example 3
+q &lt;- c("car", FALSE, TRUE)
+```
+
+--
+
+
+```r
+q
+```
+
+```
+[1] "car"   "FALSE" "TRUE" 
+```
+
+---
+
+# Summary
+
+&lt;center&gt;
+&lt;img src="creating_vec.PNG"   width="60%"&gt;
+&lt;/center&gt;
+
+
+---
+
+
+#Accessing Vector Elements (1)
+
+Elements of a Vector are accessed using indexing. The **[ ]** brackets are used for indexing. Indexing starts with position [1](1). Giving a negative value in the index drops that element from result.[TRUE](TRUE), [FALSE](FALSE) can also be used for indexing.
+
+--
+
+.pull-left[
+
+```r
+# Accessing vector elements 
+# using position.
+
+t &lt;- c("Sun","Mon","Tue")
+u &lt;- t[c(2,3)]
+```
+]
+
+
+--
+
+.pull-right[
+
+```r
+# Accessing vector elements 
+# using logical indexing.
+
+t &lt;- c("Sun","Mon","Tue")
+v &lt;- t[c(TRUE,FALSE,FALSE)]
+```
+
+]
+
+--
+
+
+
+```r
+print(u)
+```
+
+```
+[1] "Mon" "Tue"
+```
+
+--
+
+
+```r
+print(v)
+```
+
+```
+[1] "Sun"
+```
+
+
+&lt;!-- .footnote[[*] Not really. See next page.] --&gt;
+
+
+---
+
+#Accessing Vector Elements (2)
+
+Elements of a Vector are accessed using indexing. The **[ ]** brackets are used for indexing. Indexing starts with position [1](1). Giving a negative value in the index drops that element from result.[TRUE](TRUE), [FALSE](FALSE) or 0 and 1 can also be used for indexing.
+
+--
+
+
+.pull-left[
+
+```r
+# Accessing vector elements
+# using negative indexing.
+
+t &lt;- c("Sun","Mon","Tue")
+x &lt;- t[c(-2,-3)]
+```
+]
+
+
+--
+
+.pull-right[
+
+```r
+# Accessing vector elements 
+# using indexing.
+
+t &lt;- c("Sun","Mon","Tue")
+y &lt;- t[c(4,8)]
+```
+
+]
+
+
+--
+
+
+```r
+print(x)
+```
+
+```
+[1] "Sun"
+```
+
+--
+
+
+```r
+print(y)
+```
+
+```
+[1] NA NA
+```
+
+
+---
+
+# Vector arithmetic
+
+Two vectors of same length can be added, subtracted, multiplied or divided giving the result as a vector output.
+
+
+
+```r
+# Create two vectors.
+v1 &lt;- c(3, 8, 4, 5, 0, 11)
+v2 &lt;- c(4, 11, 0, 8, 1, 2)
+```
+
+--
+
+.pull-left[
+
+```r
+# Vector addition.
+add.result &lt;- v1+v2
+
+# Vector subtraction.
+sub.result &lt;- v1-v2
+```
+]
+
+
+--
+
+.pull-right[
+
+```r
+# Vector multiplication.
+multi.result &lt;- v1*v2
+
+# Vector division.
+divi.result &lt;- v1/v2
+```
+
+]
+
+
+
+---
+
+
+# Vector arithmetic
+
+When we execute the code, it produces the following result:
+
+
+```r
+print(add.result)
+```
+
+```
+[1]  7 19  4 13  1 13
+```
+
+--
+
+
+```r
+print(sub.result)
+```
+
+```
+[1] -1 -3  4 -3 -1  9
+```
+
+--
+
+
+```r
+print(multi.result)
+```
+
+```
+[1] 12 88  0 40  0 22
+```
+
+
+--
+
+
+```r
+print(divi.result)
+```
+
+```
+[1] 0.7500000 0.7272727       Inf 0.6250000 0.0000000 5.5000000
+```
+
+
+---
+
+#Vector Element Recycling
+
+If we apply arithmetic operations to two vectors of unequal length, then the elements of the shorter vector are recycled to complete the operations.
+
+--
+
+
+```r
+v1 &lt;- c(3,8,4,5,0,11)
+v2 &lt;- c(4,11)
+# V2 becomes c(4,11,4,11,4,11)
+```
+--
+
+
+```r
+add.result &lt;- v1+v2
+print(add.result)
+```
+
+```
+[1]  7 19  8 16  4 22
+```
+
+--
+
+
+```r
+sub.result &lt;- v1-v2
+print(sub.result)
+```
+
+```
+[1] -1 -3  0 -6 -4  0
+```
+
+---
+
+#Vector Element Sorting
+
+Elements in a vector can be sorted using the sort() function.
+
+
+&lt;center&gt;
+&lt;img src="images/sort.gif"   width="100%"&gt;
+&lt;/center&gt;
+
+
+
+---
+
+#Vector Element Sorting
+
+Elements in a vector can be sorted using the sort() function.
+
+
+
+```r
+v &lt;- c(3,8,4,5,0,11, -9, 304)
+
+# Sort the elements of the vector.
+sort.result &lt;- sort(v)
+```
+--
+
+```r
+# Sort the elements in the reverse order.
+revsort.result &lt;- sort(v, decreasing = TRUE)
+```
+--
+
+```r
+# Sorting character vectors.
+v &lt;- c("Red","Blue","yellow","violet")
+sort.result &lt;- sort(v)
+```
+--
+
+```r
+# Sorting character vectors in reverse order.
+revsort.result &lt;- sort(v, decreasing = TRUE)
+```
+
+---
+class: middle
+
+background-image: url(images/matrix.PNG)
+background-size: 400px
+background-position: 90% 8%
+
+# R - Matrices
+
+Matrices are the `R` objects in which the elements are arranged in a two-dimensional rectangular layout. They contain elements of the same types. Though we can create a matrix containing only [characters](characters) or only [logical](logical) values, they are not of much use. We use matrices containing [numeric](numeric) elements.
+
+&lt;center&gt;
+A Matrix is created using the `matrix()` function.
+&lt;/center&gt;
+
+
+---
+
+# Syntax
+
+The basic syntax for creating a matrix in R is:
+
+
+
+```r
+matrix(data, nrow, ncol, byrow, dimnames)
+```
+
+
+
+Following is the description of the parameters used −
+
+1. **[data](data)** is the input vector which becomes the data elements of the matrix.
+
+1. **[nrow](nrow)** is the number of rows to be created.
+
+1. **[ncol](ncol)** is the number of columns to be created.
+
+1. **[byrow](byrow)** is a logical clue. If `TRUE` then the input vector elements are arranged by row.
+
+1. **[dimname](dimname)** is the names assigned to the rows and columns.
+
+---
+
+#Example
+
+Create a matrix taking a vector of numbers as input.
+
+--
+
+
+```r
+# Elements are arranged sequentially by row.
+M &lt;- matrix(c(3:14), nrow = 4, byrow = TRUE)
+print(M)
+```
+
+```
+     [,1] [,2] [,3]
+[1,]    3    4    5
+[2,]    6    7    8
+[3,]    9   10   11
+[4,]   12   13   14
+```
+
+--
+
+
+```r
+# Elements are arranged sequentially by column.
+N &lt;- matrix(c(3:14), nrow = 4, byrow = FALSE)
+print(N)
+```
+
+```
+     [,1] [,2] [,3]
+[1,]    3    7   11
+[2,]    4    8   12
+[3,]    5    9   13
+[4,]    6   10   14
+```
+
+---
+
+#Example
+
+Create a matrix taking a vector of numbers as input.
+
+
+
+```r
+# Define the column and row names.
+rownames = c("row1", "row2", "row3", "row4")
+colnames = c("col1", "col2", "col3")
+
+P &lt;- matrix(c(3:14), 
+            nrow = 4,
+            byrow = TRUE,
+            dimnames = list(rownames, colnames))
+print(P)
+```
+
+```
+     col1 col2 col3
+row1    3    4    5
+row2    6    7    8
+row3    9   10   11
+row4   12   13   14
+```
+
+---
+
+class: middle
+
+# How to extract elements from a matrix?
+
+As in the case of vectors, brackets [,] and inside, separated by a comma, the row number and column number that interest us are used to extract elements stored within a matrix.
+
+---
+
+# Example 1
+
+- If we want to extract the value stored in row 4 and column 3.
+
+
+&lt;center&gt;
+&lt;img src="images/matrixEx1.PNG"   width="40%"&gt;
+&lt;/center&gt;
+
+--
+
+
+```r
+P[4,3]
+```
+
+```
+[1] 14
+```
+
+---
+
+# Example 2
+
+- If we want to retrieve the entire row 2 we use the following code.
+
+
+&lt;center&gt;
+&lt;img src="images/matrixEx2.PNG"   width="40%"&gt;
+&lt;/center&gt;
+
+--
+
+
+```r
+P[2,]
+```
+
+```
+col1 col2 col3 
+   6    7    8 
+```
+
+
+---
+
+# Example 3
+
+- If we want to retrieve the entire column 3 we use the following code.
+
+&lt;center&gt;
+&lt;img src="images/matrixEx3.PNG"  width="40%"&gt;
+&lt;/center&gt;
+
+--
+
+
+```r
+P[,3]
+```
+
+```
+row1 row2 row3 row4 
+   5    8   11   14 
+```
+
+---
+
+
+# Example 4
+
+If we want to show the original matrix without columns 2 we use the following code.
+
+
+&lt;center&gt;
+&lt;img src="images/matrixEx4.PNG"  width="40%"&gt;
+&lt;/center&gt;
+
+--
+
+
+
+```r
+P[,-2]
+```
+
+```
+     col1 col3
+row1    3    5
+row2    6    8
+row3    9   11
+row4   12   14
+```
+
+
+---
+
+# Example 5
+
+If we want to show the original matrix without row 1 and column 3 we use the following code.
+
+
+
+&lt;center&gt;
+&lt;img src="images/matrixEx5.PNG"   width="40%"&gt;
+&lt;/center&gt;
+
+--
+
+
+
+```r
+P[-1,-3]
+```
+
+```
+     col1 col2
+row2    6    7
+row3    9   10
+row4   12   13
+```
+
+
+
+---
+
+# data.frame( )
+
+
+---
+
+
+```r
+DT::datatable(
+  head(iris, 8),
+  fillContainer = F, options = list(pageLength = 5)
+)
+```
+
+<div id="htmlwidget-c1718d8c9bbcf744ba40" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1718d8c9bbcf744ba40">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+# Some Tips
+
+- When you use the "Infinite Moon Reader" addin in RStudio, your R session will be blocked by default. You can click the red button on the right of the console to stop serving the slides, or use the _daemonized_ mode so that it does not block your R session. To do the latter, you can set the option
+
+    ```r
+    options(servr.daemon = TRUE)
+    ```
+    
+    in your current R session, or in `~/.Rprofile` so that it is applied to all future R sessions. I do the latter by myself.
+    
+    To know more about the web server, see the [**servr**](https://github.com/yihui/servr) package.
+
+--
+
+- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        yolo: true
+    ```
+
+---
+
+# Some Tips
+
+- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.name/xaringan/incremental.html) for examples.
+
+- The option `highlightLines: true` of `nature` will highlight code lines that start with `*`, or are wrapped in `{{ }}`, or have trailing comments `#&lt;&lt;`;
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          highlightLines: true
+    ```
+
+    See examples on the next page.
+
+---
+
+# Some Tips
+
+
+.pull-left[
+An example using a leading `*`:
+
+    ```r
+    if (TRUE) {
+    ** message("Very important!")
+    }
+    ```
+Output:
+```r
+if (TRUE) {
+* message("Very important!")
+}
+```
+
+This is invalid R code, so it is a plain fenced code block that is not executed.
+]
+
+.pull-right[
+An example using `{{}}`:
+
+````
+```{r tidy=FALSE}
+if (TRUE) {
+*{{ message("Very important!") }}
+}
+```
+````
+Output:
+
+```r
+if (TRUE) {
+* message("Very important!") 
+}
+```
+
+```
+## Very important!
+```
+
+It is valid R code so you can run it. Note that `{{}}` can wrap an R expression of multiple lines.
+]
+
+---
+
+# Some Tips
+
+An example of using the trailing comment `#&lt;&lt;` to highlight lines:
+
+````markdown
+```{r tidy=FALSE}
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + 
+  geom_point() +   #&lt;&lt;
+  geom_smooth()    #&lt;&lt;
+```
+````
+
+Output:
+
+
+```r
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + 
+* geom_point() +
+* geom_smooth()
+```
+
+---
+
+# Some Tips
+
+When you enable line-highlighting, you can also use the chunk option `highlight.output` to highlight specific lines of the text output from a code chunk. For example, `highlight.output = TRUE` means highlighting all lines, and `highlight.output = c(1, 3)` means highlighting the first and third line.
+
+````md
+```{r, highlight.output=c(1, 3)}
+head(iris)
+```
+````
+
+
+```
+*##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+*## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+
+Question: what does `highlight.output = c(TRUE, FALSE)` mean? (Hint: think about R's recycling of vectors)
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+background-size: 100px
+background-position: 90% 8%
+
+
+
+---
+
+![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

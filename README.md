@@ -1,2 +1,1 @@
-# AparicioJohan.github.io
-RCourse
+# RCourse
