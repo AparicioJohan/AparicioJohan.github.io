@@ -901,43 +901,82 @@ P[-1,-3]
 
 ---
 
-# data.frame( )
+class: middle
+
+# Data frame
+
+
+The data frame is one of the most used objects since it allows grouping vectors with information of **different types** ([numerical](numerical), [alphanumeric](alphanumeric) or [logical](logical)) in the same object, the only restriction is that the vectors must have the **same length**.
+The `data.frame()` function is used to create a data frame. 
 
 
 ---
 
-```{r eval=require('DT'), tidy=FALSE}
-DT::datatable(
-  head(iris, 8),
-  fillContainer = F, options = list(pageLength = 5)
-)
-```
+# data(iris)
 
----
-
-# Some Tips
-
-- When you use the "Infinite Moon Reader" addin in RStudio, your R session will be blocked by default. You can click the red button on the right of the console to stop serving the slides, or use the _daemonized_ mode so that it does not block your R session. To do the latter, you can set the option
-
-    ```r
-    options(servr.daemon = TRUE)
-    ```
-    
-    in your current R session, or in `~/.Rprofile` so that it is applied to all future R sessions. I do the latter by myself.
-    
-    To know more about the web server, see the [**servr**](https://github.com/yihui/servr) package.
+This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
 
 --
 
-- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
+<center>
+<img src="https://miro.medium.com/max/1275/1*7bnLKsChXq94QjtAiRn40w.png"  width="100%">
+</center>
 
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        yolo: true
-    ```
 
 ---
+
+
+# data(iris)
+
+```{r}
+data(iris)
+
+# ?iris
+```
+
+--
+
+```{r eval=require('DT'), tidy=FALSE, echo=F}
+DT::datatable(
+  head(iris, 8),
+  fillContainer = F, options = list(pageLength = 4)
+)
+```
+
+
+
+
+---
+
+class: center, middle
+
+
+# Iris
+
+.pull-left[
+```{r , warning=F, message=F, echo=F, fig.height=5,fig.width=5.5}
+library(ggplot2)
+library(plotly)
+iris %>% ggplot(., aes(x=Sepal.Length,y=Sepal.Width,color=Species))+geom_point()+
+  theme_bw()->p
+ggplotly(p)
+```
+]
+
+.pull-right[
+```{r , warning=F, message=F, echo=F,fig.height=6,fig.width=5.5}
+library(ggplot2)
+library(plotly)
+iris %>% ggplot(., aes(x=Petal.Length,y=Petal.Width,color=Species))+geom_point()+
+  theme_bw()->p
+ggplotly(p)
+```
+]
+
+
+
+---
+
 
 # Some Tips
 
