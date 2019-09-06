@@ -391,6 +391,64 @@ q
 ---
 
 
+# Creating seq using rep( )
+
+```{r, comment="", eval=F }
+rep( c(0,0,7), times = 4)
+```
+
+--
+
+```{r, comment="", echo=F}
+rep( c(0,0,7), times = 4)
+```
+
+--
+
+```{r, comment="", eval=F}
+rep( c(2,4,2), each = 4)
+```
+
+--
+
+```{r, comment="", echo=F}
+rep( c(2,4,2), each = 4)
+```
+
+
+--
+
+```{r, comment="", eval=F}
+rep( c(0,7), times = c(4, 3) )
+```
+
+--
+
+```{r, comment="", echo=F}
+rep( c(0,7), times = c(4, 3) )
+```
+
+
+
+--
+
+```{r, comment="", eval=F}
+rep( 1:3, length.out = 9)
+```
+
+
+--
+
+
+```{r, comment="", echo=F}
+rep( 1:3, length.out = 9)
+```
+
+
+
+---
+
+
 #Accessing Vector Elements (1)
 
 Elements of a Vector are accessed using indexing. The **[ ]** brackets are used for indexing. Indexing starts with position [1](1). Giving a negative value in the index drops that element from result.[TRUE](TRUE), [FALSE](FALSE) can also be used for indexing.
