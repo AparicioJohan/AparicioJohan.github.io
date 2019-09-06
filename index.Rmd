@@ -953,141 +953,67 @@ class: middle
 
 # Iris
 
-.pull-left[
-```{r , warning=F, message=F, echo=F, fig.height=4,fig.width=5.5}
+<center>
+```{r , warning=F, message=F, echo=F, fig.width=9}
 library(ggplot2)
 library(plotly)
 iris %>% ggplot(., aes(x=Sepal.Length,y=Sepal.Width,color=Species))+geom_point()+
-  theme_bw()->p
+  theme_bw(base_size = 15)->p
 ggplotly(p)
 ```
-]
+</center>
 
-.pull-right[
-```{r , warning=F, message=F, echo=F,fig.height=4,fig.width=5.5}
+---
+
+class: middle
+
+# Iris
+
+<center>
+```{r , warning=F, message=F, echo=F,fig.width=9}
 library(ggplot2)
 library(plotly)
 iris %>% ggplot(., aes(x=Petal.Length,y=Petal.Width,color=Species))+geom_point()+
-  theme_bw()->p
+  theme_bw(base_size = 15)->p
 ggplotly(p)
 ```
-]
+</center>
+
+---
+
+
+# How to extract elements from a data frame?
+
+To retrieve the variables (columns) stored in a data frame, you can use the [$]($) operator, single square brackets [[]]([]) or double square brackets [[[]]]([[]]). Here are some examples to understand the differences between these options.
+
+--
+
+- If we want to extract the ["Sepal.Length"]("Sepal.Length") variable from the iris data frame as a vector, we use the following code.
+
+--
+
+```{r, comment="", eval=F}
+iris$Sepal.Length
+```
+
+--
+
+```{r, comment="", eval=F}
+iris[,1]
+```
+
+--
+
+
+```{r, comment="", eval=F}
+iris[["Sepal.Length"]]
+```
+
 
 
 
 ---
 
-
-# Some Tips
-
-- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.name/xaringan/incremental.html) for examples.
-
-- The option `highlightLines: true` of `nature` will highlight code lines that start with `*`, or are wrapped in `{{ }}`, or have trailing comments `#<<`;
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          highlightLines: true
-    ```
-
-    See examples on the next page.
-
----
-
-# Some Tips
-
-
-.pull-left[
-An example using a leading `*`:
-
-    ```r
-    if (TRUE) {
-    ** message("Very important!")
-    }
-    ```
-Output:
-```r
-if (TRUE) {
-* message("Very important!")
-}
-```
-
-This is invalid R code, so it is a plain fenced code block that is not executed.
-]
-
-.pull-right[
-An example using `{{}}`:
-
-````
-`r ''````{r tidy=FALSE}
-if (TRUE) {
-*{{ message("Very important!") }}
-}
-```
-````
-Output:
-```{r tidy=FALSE}
-if (TRUE) {
-{{ message("Very important!") }}
-}
-```
-
-It is valid R code so you can run it. Note that `{{}}` can wrap an R expression of multiple lines.
-]
-
----
-
-# Some Tips
-
-An example of using the trailing comment `#<<` to highlight lines:
-
-````markdown
-`r ''````{r tidy=FALSE}
-library(ggplot2)
-ggplot(mtcars) + 
-  aes(mpg, disp) + 
-  geom_point() +   #<<
-  geom_smooth()    #<<
-```
-````
-
-Output:
-
-```{r tidy=FALSE, eval=FALSE}
-library(ggplot2)
-ggplot(mtcars) + 
-  aes(mpg, disp) + 
-  geom_point() +   #<<
-  geom_smooth()    #<<
-```
-
----
-
-# Some Tips
-
-When you enable line-highlighting, you can also use the chunk option `highlight.output` to highlight specific lines of the text output from a code chunk. For example, `highlight.output = TRUE` means highlighting all lines, and `highlight.output = c(1, 3)` means highlighting the first and third line.
-
-````md
-`r ''````{r, highlight.output=c(1, 3)}
-head(iris)
-```
-````
-
-```{r, highlight.output=c(1, 3), echo=FALSE}
-head(iris)
-```
-
-Question: what does `highlight.output = c(TRUE, FALSE)` mean? (Hint: think about R's recycling of vectors)
-
----
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-background-size: 100px
-background-position: 90% 8%
-
-
-
----
 
 ![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
 
