@@ -278,7 +278,7 @@ seq( from = 2 , to = 7 , by = 0.7)
 ```
 
 
-.footnote[  **[_NOTE:_](_NOTE:_)**  from = ...   ,  to =  ... ,  by  = ... ] 
+.footnote[  **[_NOTE:_](_NOTE:_)**  arguments  ] 
 
 ---
 
@@ -482,6 +482,36 @@ print(x)
 
 ```{r, comment=""}
 print(y)
+```
+
+
+---
+
+#Accessing Vector Elements (3)
+
+
+Elements of a Vector are accessed using names.
+
+```{r}
+I <- c("one"=1,"two"=2,"three"=3)
+```
+
+--
+
+```{r,comment=""}
+print(I)
+```
+
+--
+
+```{r, comment=""}
+I["one"] #<<
+```
+
+--
+
+```{r, comment=""}
+I[c("three","two")]  #<<
 ```
 
 
