@@ -948,13 +948,13 @@ DT::datatable(
 
 ---
 
-class: center, middle
+class: middle
 
 
 # Iris
 
 .pull-left[
-```{r , warning=F, message=F, echo=F, fig.height=5,fig.width=5.5}
+```{r , warning=F, message=F, echo=F, fig.height=4,fig.width=5.5}
 library(ggplot2)
 library(plotly)
 iris %>% ggplot(., aes(x=Sepal.Length,y=Sepal.Width,color=Species))+geom_point()+
@@ -964,7 +964,7 @@ ggplotly(p)
 ]
 
 .pull-right[
-```{r , warning=F, message=F, echo=F,fig.height=6,fig.width=5.5}
+```{r , warning=F, message=F, echo=F,fig.height=4,fig.width=5.5}
 library(ggplot2)
 library(plotly)
 iris %>% ggplot(., aes(x=Petal.Length,y=Petal.Width,color=Species))+geom_point()+
