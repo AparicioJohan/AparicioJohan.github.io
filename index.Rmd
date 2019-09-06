@@ -6,7 +6,7 @@ date: "2019/10/09"
 output:
   xaringan::moon_reader:
     css: ["default", "default", "default-fonts"]
-    seal: false
+    seal: true
     lib_dir: libs
     nature:
       highlightLines: true
@@ -23,7 +23,7 @@ class: center, middle
 <img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/RStudio.png" alt="RStudio"   width="100" height="120">
 ###Johan Aparicio 
 ## International Center for Tropical Agriculture
-## 2019/05/09
+## 2019/10/09
 
 
 ---
@@ -172,26 +172,6 @@ r <- 4 > 6
 class(r)
 ```
 
-
----
-  
-1.	Data nature and structure (Jaison, Mr Bean) (types of vectors, default datasets(iris, mtcars, etc)) 
-
-2.	Summary/continue of basic operations
-
-3.	Types of variables (numeric, character, factor, logical, integer, string, NA, NaN, NULL)
-
-4.	Types of objects (atomic vectors, matrix, data.frames, lists, …arrays….)
-
-5.	Vecor creation c(), rep(), seq()
-
-6.	Vector indexing and element extraction
-
-7.	Data.frame() explain and operations ($ and [rows,cols])
-
-8.	Adding a row and a column
-
-9.	Introduction to dplyr 
 
 ---
 
@@ -1004,18 +984,59 @@ iris[,1]
 
 --
 
-
 ```{r, comment="", eval=F}
 iris[["Sepal.Length"]]
 ```
 
+--
 
+```{r, comment="", eval=F}
+iris[,"Sepal.Length"]
+```
 
 
 ---
 
 
-![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
+#How to extract subsets of a data frame?
+
+The `subset(x, subset, select)`  function can be used to extract parts of a data frame. The [x](x) parameter is used to indicate the original data frame, the [subset](subset) parameter is used to place the condition and the [select](select) parameter is used to keep only some of the variables in the data frame.
+
+--
+
+* If we want the iris data frame only with the setosa species we use the following code.
+
+```{r, eval=F}
+subset(iris, subset=Species == "setosa")
+```
+
+```{r, echo=F, comment=""}
+head(subset(iris, subset=Species == "setosa"),8)
+```
+
+---
+
+# Logical comparison operators in R
+
+<center>
+<img src="https://bookdown.org/ndphillips/YaRrr/YaRrr_files/figure-html/comparison-1.png" alt="Comp"   width="80%">
+</center>
+
+
+---
+
+
+# Exercises
+
+* Con la base de datos Iris, seleccionar un subconjuto de los datos donde se cumplan las siguientes condiciones:
+
+  * Solo seleccionar las flores de especie Versicolor
+  
+  * Solo seleccionar las flores de especie Versicolor o setosa
+  
+  * Las flores con Sepal.length mayor que 6 
+  
+  * Las flores con Petal.width menor o igual a 0.8 
 
 ---
 
@@ -1025,4 +1046,6 @@ class: center, middle
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+[**https://apariciojohan.github.io/**](https://apariciojohan.github.io/)
+
+Johan Aparicio 
