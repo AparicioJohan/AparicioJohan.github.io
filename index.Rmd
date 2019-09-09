@@ -1040,6 +1040,83 @@ head(subset(iris, subset=Species == "setosa"),8)
 
 ---
 
+class: middle
+
+# Creating Lists 
+
+Lists are another type of object widely used to store objects of different types. The instruction to create a list is `list()`. Next we are going to create a list that contains [**three**](three) objects: 
+
+* a vector with [**5**](5) random numbers called [**mivector**](mivector)
+* a 6 × 2 dimension matrix with the first twelve positive integers called [**matrix2**](matrix2) 
+* and the third object will be the [**iris**](iris) data frame loaded in the previous slide.
+
+The instructions for creating the required list are shown below.
+
+--
+
+```{r, comment=""}
+set.seed(1)
+mivector <- rnorm(n=5)
+matriz2 <- matrix(data=1:12, ncol=6)
+
+milista <- list(E1=mivector, E2=matriz2, E3=iris) #<<
+```
+
+---
+
+# Creating Lists 
+
+
+The `set.seed` function of line number 1 serves to set the seed in such a way that the random numbers generated in the second line with the `rnorm( )` function are always the same.
+
+```{r, comment=""}
+print(milista)
+```
+
+
+---
+
+class: middle
+
+# How to extract items from a list?
+
+To retrieve items stored in a list, use the [$]($) operator, double square brackets [[[]]]([[]]) or single square brackets [[]]([]). Here are some examples to understand how to extract items from a list.
+
+---
+
+# How to extract items from a list?
+
+```{r, comment=""}
+milista$E2
+```
+--
+
+```{r, comment=""}
+milista[[2]]
+```
+--
+
+```{r, comment=""}
+
+milista[2]
+```
+
+---
+
+# Using class for items in a list
+
+
+```{r, comment=""}
+class(milista$E2)
+
+class(milista[[2]])
+
+class(milista[2])
+```
+
+
+---
+
 class: center, middle
 
 # Thanks!
