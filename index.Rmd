@@ -317,7 +317,7 @@ background-image: url(logo.svg)
 background-size: 120px
 background-position: 10% 98%
 
-##Giving different types of data item in a Vector
+##Giving different types of data items in a Vector
 
 
 ```{r}
@@ -336,11 +336,11 @@ y
 
 --
 
-## Generic order in increasing fashion is as follows :
+## Generic order in increasing fashion is:
 
 <center>
 
-Boolean < Numeric < Character
+[Boolean](Boolean) < [Numeric](Numeric) < [Character](Character)
 
 </center>
 
@@ -475,7 +475,7 @@ background-position: 10% 98%
 
 #Accessing Vector Elements (1)
 
-Elements of a Vector are accessed using indexing. The **[ ]** brackets are used for indexing. Indexing starts with position [1](1). Giving a negative value in the index drops that element from result.[TRUE](TRUE), [FALSE](FALSE) can also be used for indexing.
+Elements of a Vector can be accessed using indexing. The **[ ]** brackets are used for indexing. Indexing starts with position [1](1). Giving a negative value in the index drops that element from the result.[TRUE](TRUE), [FALSE](FALSE) can also be used for indexing.
 
 --
 
@@ -528,7 +528,7 @@ background-position: 10% 98%
 
 #Accessing Vector Elements (2)
 
-Elements of a Vector are accessed using indexing. The **[ ]** brackets are used for indexing. Indexing starts with position [1](1). Giving a negative value in the index drops that element from result.[TRUE](TRUE), [FALSE](FALSE) or 0 and 1 can also be used for indexing.
+Elements of a Vector can be accessed using indexing. The **[ ]** brackets are used for indexing. Indexing starts with position [1](1). Giving a negative value in the index drops that element from result.[TRUE](TRUE), [FALSE](FALSE) or 0 and 1 can also be used for indexing.
 
 --
 
@@ -581,7 +581,7 @@ background-position: 10% 98%
 #Accessing Vector Elements (3)
 
 
-Elements of a Vector are accessed using names.
+Elements of a Vector can be accessed using names.
 
 ```{r}
 I <- c("one"=1,"two"=2,"three"=3)
