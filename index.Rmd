@@ -1,5 +1,6 @@
 ---
 title: "Introduction into R for absolute beginners"
+subtitle: "<img src='https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/RStudio.png' alt='RStudio'   width='100' height='120'> " 
 author: "Johan Aparicio"
 institute: "International Center for Tropical Agriculture"
 date: "2019/10/09"
@@ -16,17 +17,6 @@ output:
 ```{r setup, include=FALSE, comment=""}
 options(htmltools.dir.version = FALSE)
 ```
-
-class: center, middle
-
-#Introduction into R for absolute beginners
-<img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/RStudio.png" alt="RStudio"   width="100" height="120">
-###Johan Aparicio 
-## International Center for Tropical Agriculture
-## 2019/10/09
-
-
----
 
 class: center, middle
 
@@ -88,10 +78,17 @@ Los principales objetos en R son:
 
 ---
 
-background-image: url(images/r-vector.jpg)
-background-size: 600px
+background-image: url(logo.svg)
+background-size: 120px
+background-position: 10% 98%
+
 
 # Vectors
+
+<center>
+<img src='images/r-vector.jpg' alt='RStudio'   width='100%'>
+</center>
+
 
 ---
 
