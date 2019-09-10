@@ -338,11 +338,11 @@ y
 
 ## Generic order in increasing fashion is:
 
+
 <center>
-
-[Boolean](Boolean) < [Numeric](Numeric) < [Character](Character)
-
+Boolean < Numeric < Character
 </center>
+
 
 
 ---
