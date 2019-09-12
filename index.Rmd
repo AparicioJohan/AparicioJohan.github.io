@@ -1291,6 +1291,10 @@ background-position: 10% 98%
 
 6. Guarde en una nueva base de datos los vehículos  con más de 5 carburadores.
 
+7. Almacene en un nuevo vector llamado temp, la variable mpg.
+
+8. Seleccione de temp sólo los valores que superan los 20 mpg
+
 ---
 
 class: middle
