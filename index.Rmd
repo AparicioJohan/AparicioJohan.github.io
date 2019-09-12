@@ -1,5 +1,5 @@
 ---
-title: "Introduction into R for absolute beginners"
+title: "Introduction into R"
 subtitle: "<img src='https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/RStudio.png' alt='RStudio'   width='100' height='120'> " 
 author: "Johan Aparicio"
 institute: "International Center for Tropical Agriculture"
@@ -1265,6 +1265,89 @@ class(milista$E2)
 class(milista[[2]])
 
 class(milista[2])
+```
+
+
+---
+
+class: middle
+
+background-image: url(logo.svg)
+background-size: 120px
+background-position: 10% 98%
+
+# Exercises
+
+1. Cargue la base de datos mtcars ([?mtcars](?mtcars))
+
+2. Identifique la estructura de la base de datos.
+
+3. Realice un resumen general.
+
+4. ¿Qué sucede con la variable vs?
+  ¿Realmente es una variable númerica?
+  
+5. Realice un resumen para los autos con transmisión automática.
+
+6. Guarde en una nueva base de datos los vehículos  con más de 5 carburadores.
+
+---
+
+class: middle
+
+background-image: url(logo.svg)
+background-size: 120px
+background-position: 10% 98%
+
+# Database reading
+
+## In what format to store a database?
+
+
+Preferably, save the information in `.csv` or `.txt` and then if we import this to R.
+
+
+---
+
+background-image: url(logo.svg)
+background-size: 120px
+background-position: 10% 98%
+
+# Database reading (Excel)
+
+Se debe iniciar en la parte superior izquierda, no se deben dejar filas vacías, no se debe colorear, no se deben colocar bordes ni nada, se ingresa la información sin embellecer el contenido. Por último se guarda el archivo en la carpeta deseada y al momento de nombrar el archivo se debe modificar la opción tipo de archivo a csv (delimitado por comas).
+
+<center>
+<img src='images/excel.PNG' alt='RStudio'   width='70%'>
+</center>
+
+
+---
+
+class: middle
+
+background-image: url(logo.svg)
+background-size: 120px
+background-position: 10% 98%
+
+# Database reading
+
+
+```r
+read.table(file, header = FALSE, sep = "", quote = "\"'",
+           dec = ".", row.names, col.names)
+
+read.csv(file, header = TRUE, sep = ",", quote = "\"",
+         dec = ".", fill = TRUE, comment.char = "", ...)
+
+read.csv2(file, header = TRUE, sep = ";", quote = "\"",
+          dec = ",", fill = TRUE, comment.char = "", ...)
+
+read.delim(file, header = TRUE, sep = "\t", quote = "\"",
+           dec = ".", fill = TRUE, comment.char = "", ...)
+
+read.delim2(file, header = TRUE, sep = "\t", quote = "\"",
+            dec = ",", fill = TRUE, comment.char = "", ...) 
 ```
 
 
